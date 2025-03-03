@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            border: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body,html{
+            height: 100%;
+            width: 100%;
+
+        }
+        #main{
+            height: 100%;
+            width: 100%;
+            background-color: yellow;
+            padding: 20px;
+            display: flex;
+            gap:25px;
+            flex-wrap: wrap;
+        }
+        .card{
+            height: 190px;
+            width: 190px;
+            background-color: blue;
+        }
+        .card img{
+            height: 150px;
+            width: 190px;
+
+        }
+
+        .name{
+            height: 20px;
+            width: 190px;
+            background-color: pink;
+        }
+        .email{
+            height: 20px;
+            width: 190px;
+            background-color: rgb(218, 94, 115);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="main">
+
+
+        
+      
+        
+
+        <% alluser.forEach(function(val){ %>
+            
+       
+         <div class="card">
+            <img src="<%= val.image %>" alt="No image to see ">
+            <div class="name"><%= val.name %></div>
+            <div class="email"><%= val.email %></div>
+
+            <a href="">Edit</a>
+            <a href="/delete/<%= val._id %>">Delete </a>
+         </div>
+      <%   }) %>
+         
+         
+
+    </div>
+
+    
+
+
+    
+    
+</body>
+</html>
