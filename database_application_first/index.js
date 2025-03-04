@@ -39,6 +39,17 @@ app.post('/create', async  function(req,res){
      
 })
 
+app.get('/edit/:editid', async (req,res) => {
+    let edituser = await usermodel.findOne({_id:req.params.editid})
+    res.render('edit',{edituser})
+})
+
+app.post('/update/:userid', async (req,res) =>{
+    let {image, name , email} = req.body;
+    let user  = await usermodel.findOneAndUpdate({_id:req.params.userid},{image , name , email} , {new : true })
+    res.redirect('/read')
+})
+
 app.listen(3000,function(err){
     if(err){
         console.log(err)
