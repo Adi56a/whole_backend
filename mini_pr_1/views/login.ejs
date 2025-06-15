@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 500px;
+            background-color: #1f1f1f;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #FFCC00; /* Golden Accent */
+        }
+
+        .form_elements {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            background-color: #333;
+            color: #fff;
+            outline: none;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .form_elements:focus {
+            background-color: #444;
+            box-shadow: 0 0 5px 2px #FFCC00; /* Focus Effect */
+        }
+
+        .submit_button {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.2rem;
+            color: #fff;
+            background-color: #FFCC00; /* Golden Button */
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .submit_button:hover {
+            background-color: #FFD700; /* Lighter Gold */
+            transform: scale(1.05);
+        }
+
+        .submit_button:active {
+            transform: scale(0.98);
+        }
+
+        .link {
+            font-size: 1rem;
+            color: #FFCC00;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .link:hover {
+            color: #FFD700; /* Lighter Gold */
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .form_elements {
+                font-size: 1rem;
+            }
+
+            .submit_button {
+                font-size: 1rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="main">
+        <h1>Login Your Account</h1>
+        <form action="/login" method="post">
+            <input type="email" name="email" placeholder="Enter your Email" class="form_elements" required>
+            <input type="password" name="password" placeholder="Enter your Password" class="form_elements" required>
+            <input type="submit" value="Login" class="submit_button">
+        </form>
+        <a href="/register" class="link">Don't have an account? Register here</a>
+    </div>
+
+</body>
+</html>

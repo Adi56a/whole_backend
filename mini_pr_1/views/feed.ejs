@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            width: 100%;
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: white;
+        }
+
+        #main {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 20px;
+            background-color: #121212;
+        }
+
+        h1, h5 {
+            text-align: center;
+            color: white;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+
+        .hello {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .logout {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: yellowgreen;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .logout:hover {
+            color: lightgreen;
+            transform: scale(1.1);
+        }
+
+        form {
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-top: 40px;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 80px;
+            max-height: 120px;
+            padding: 10px;
+            font-size: 1.2rem;
+            color: white;
+            background-color: #333;
+            border: none;
+            border-radius: 10px;
+            outline: none;
+            resize: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        textarea:focus {
+            background-color: #444;
+        }
+
+        .submit {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #fff;
+            background-color: #6200ea;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .submit:hover {
+            transform: scale(1.1);
+            background-color: #3700b3;
+        }
+
+        .post_holder {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            width: 100%;
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        .card {
+            width: 250px;
+            min-height: 150px;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            color: white;
+        }
+
+        .card a {
+            color: yellowgreen;
+            text-decoration: none;
+            font-size: 1.1rem;
+            margin-right: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .card a:hover {
+            color: lightgreen;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .hello {
+                font-size: 1.5rem;
+            }
+
+            .post_holder {
+                gap: 15px;
+            }
+
+            .card {
+                width: 100%;
+                max-width: 400px;
+            }
+
+            .submit {
+                font-size: 1rem;
+                padding: 12px 25px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .hello {
+                font-size: 1.3rem;
+            }
+
+            .card {
+                width: 100%;
+                max-width: 90%;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <a href="/logout" class="logout">Logout</a>
+        <h1>My Feed </h1>
+        <h1 class="hello">Hello, : 🔥</h1>
+        <h5>View Other Peoples point of view </h5>
+
+
+        <div class="post_holder">
+
+           <%  posts.forEach(function(post){  %>
+
+                <div class="card">
+                    <h3> <%= post.user.name %></h3>
+                    <h3> <%= post.content %></h3>
+                    <a href="#"> <%= post.likes.length %>  likes </a>
+                    
+                </div>
+         <%   })  %>
+           
+           
+        </div>
+    </div>
+</body>
+</html>

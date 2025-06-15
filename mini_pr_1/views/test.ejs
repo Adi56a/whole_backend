@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            border: 0;
+
+        }
+        
+        html,body{
+            height: 100%;
+            width: 100%;
+            background-color: red;
+        }
+         
+        #main{
+            height: 100%;
+            width: 100%;
+            background-color: rgb(203, 240, 255);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        form{
+            height: auto;
+            width: 50%;
+            background-color: blanchedalmond;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 10px;
+            gap: 10px;
+        }
+
+        .file_input{
+            padding: 8px;
+            border-radius: 4px ;
+            background-color: rgb(212, 241, 150);
+            
+        }
+        .submit{
+            padding: 10px;
+            border-radius: 4px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+
+        <form action="/upload" method="post" enctype="multipart/form-data">
+
+
+            <input type="file" class="file_input" name="image">
+            <input type="submit" value="Upload file" class="submit">
+        </form>
+          
+
+
+    </div>
+</body>
+</html>
